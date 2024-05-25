@@ -106,7 +106,7 @@ body {
 
 body::before {
     content: "";
-    background-image: url("/projetsakuga/image/DALL·E\ 2024-05-19\ 20.18.21\ -\ A\ clean\,\ minimalist\ background\ for\ a\ website\,\ featuring\ a\ serene\,\ abstract\ landscape\ with\ soft\ pastel\ colors.\ The\ background\ should\ have\ a\ calming\ fee.webp");
+    background-image: url("/image/DALL·E\ 2024-05-19\ 20.18.21\ -\ A\ clean\,\ minimalist\ background\ for\ a\ website\,\ featuring\ a\ serene\,\ abstract\ landscape\ with\ soft\ pastel\ colors.\ The\ background\ should\ have\ a\ calming\ fee.webp");
     background-size: cover;
     background-position: center;
     position: fixed; /* Position fixe pour que l'image reste fixe pendant le défilement */
