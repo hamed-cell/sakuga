@@ -1,0 +1,394 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(230, 75%, 56%);
+  --title-color: hsl(230, 75%, 15%);
+  --text-color: #000501;
+  --body-color: hsl(230, 100%, 98%);
+  --container-color: hsl(230, 100%, 97%);
+  --border-color: hsl(230, 25%, 80%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px .syne..*/
+  --body-font: "Syne", sans-serif;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: .938rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1023px) {
+  :root {
+    --h2-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.hero h1{
+  font-family:'Playfair',sans-serif ;
+  margin-top: 300px;
+}
+.hero p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  height: 100vh;
+  color: #333; /* Assurez-vous que cette couleur contraste bien avec votre fond */
+}
+
+.hero button{
+  border: 1 solid #005A8D ;
+  margin-top: 15px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius:15px;
+  background-color: #B0E0E6;
+}
+
+button:hover{
+  color: var(--first-color);
+}
+
+.support a:hover{
+  color: var(--first-color);
+}
+.top-artist a:hover{
+  color: var(--first-color);
+}
+
+body,
+input,
+button {
+  font-family: var(--body-font);  
+  font-size: var(--normal-font-size); /*taille de police*/
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  position: relative; 
+
+}
+
+body::before {
+    content: "";
+    background-image: url("/projetsakuga/image/DALL·E\ 2024-05-19\ 20.18.21\ -\ A\ clean\,\ minimalist\ background\ for\ a\ website\,\ featuring\ a\ serene\,\ abstract\ landscape\ with\ soft\ pastel\ colors.\ The\ background\ should\ have\ a\ calming\ fee.webp");
+    background-size: cover;
+    background-position: center;
+    position: fixed; /* Position fixe pour que l'image reste fixe pendant le défilement */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+
+}
+
+.container iframe{
+  display: flex;
+  flex-direction: row;
+}
+.main {
+  position: relative;
+  height: 100vh;
+}
+
+.main__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+.search,
+.login {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-modal);
+  background-color: hsla(230, 75%, 15%, .1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px); /* For safari */
+  padding: 8rem 1.5rem 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s;
+}
+
+.search__close,
+.login__close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 1.5rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(251, 251, 251, 0.5); /* Définit la couleur d'arrière-plan avec de la transparence */
+    box-shadow: 0 2px 16px hsla(230, 75%, 32%, .15);
+    z-index: var(--z-fixed);
+    display: flex; /* Ajout de flexbox pour aligner les éléments */
+    justify-content: space-between; /* Pour espacer les éléments horizontalement */
+    align-items: center; /* Pour centrer les éléments verticalement */
+}
+
+/*=============== VIDÉO RECOMMANDÉE ===============*/
+.recommended {
+  padding: 2rem 0;
+  text-align: center;
+  background-color: white;
+}
+
+
+.recommended__title {
+  margin-bottom: 30px;
+  font-size: 40px;
+  color: #4A4A4A; /* Gris foncé pour le titre */
+}
+
+.video-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px; /* Espacement entre les vidéos */
+  padding: 1rem;
+}
+
+.video {
+  border-radius: 10px; /* Bords arrondis pour les vidéos */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour les vidéos */
+  width: 320px; /* Largeur des vidéos */
+  height: 180px; /* Hauteur des vidéos */
+}
+
+@media screen and (max-width: 768px) {
+  .video-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .video {
+    width: 100%;
+    max-width: 320px; /* Largeur maximale pour les petits écrans */
+    height: auto;
+  }
+}
+
+.top-artist {
+  background-color: aliceblue;
+  padding-bottom: 100px;
+  margin-bottom: 100px;
+
+
+}
+.top-artist ul{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 200px ;
+  color: #000501;
+}
+.top-artist a {
+  color: #4A4A4A;
+  font-size: 25px;
+
+}
+
+.top-artist h2{
+  text-align: center;
+  font-size: 40px;
+  color: #4A4A4A; /* Gris foncé pour le titre */
+}
+.top-artist p{
+  font-size: 25px;
+  text-align: center;
+  color: #4A4A4A;
+}
+
+
+.about-us-section {
+  display: flex;
+  align-items: center; /* Center the items vertically */
+  gap: 300px; /* Space between the video and text */
+  margin-top: 100px;
+}
+
+.about-us-video {
+
+  margin-left: 100px;
+  border-radius: 10px; /* Bords arrondis pour les vidéos */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour les vidéos */
+  width: 640px; /* Largeur des vidéos */
+  height: 360px; /* Hauteur des vidéos */
+}
+
+.about-us-text {
+  max-width: 100%; /* Ensure the text does not take too much space */
+  font-size: 25px;
+  margin-right: 100px;
+}
+
+.support {
+  background: rgba(251, 251, 251, 0.5);
+      backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px); /* For safari */  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+.support ul {
+  color: #000501;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 20px;
+  flex: 1;
+}
+
+.support li {
+  margin-bottom: 10px;
+}
+
+.support-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.support a {
+  color: #000501;
+  text-decoration: none;
+}
+
+.support-titre {
+  font-size: 20px;
+  margin-bottom: 20px;  /* Utilisez une marge inférieure raisonnable */
+  font-weight: bold;  /* Rendez le texte en gras pour qu'il ressemble à un titre */
+}
+
+
+
+/*=============== FIN ===============*/
+
+/*=============== news-list ===============*/
+
+.news{
+  font-size: 2.2rem;
+
+}
+.news-list{
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 3rem;
+}
+.news-list a{
+  color: #000501;
+  font-size: 2.8rem;
+
+}
+/*=============== FIN ===============*/
+.terms{
+    margin-left: 100px;
+    margin-top: 200px;
+    margin-right: 100px;
+}
+
+h2{
+    font-size: 50px;
+    margin-bottom: 50px;    
+}
+    
+h3{
+    font-size: 45px;
+    margin-bottom: 40px;    
+}
+    
+p{
+    font-size: 30px;
+    margin-bottom: 30px;    
+}
+    
+.service-li{
+    font-size: 30px;
+    margin-bottom: 20px;
+    
+}
+    
+.service-ul{
+    margin-bottom: 40px;    
+}

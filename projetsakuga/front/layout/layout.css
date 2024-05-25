@@ -1,0 +1,188 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap");
+
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(230, 75%, 56%);
+  --title-color: hsl(230, 75%, 15%);
+  --text-color: hsl(230, 12%, 40%);
+  --body-color: hsl(230, 100%, 98%);
+  --container-color: hsl(230, 100%, 97%);
+  --border-color: hsl(230, 25%, 80%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px .syne..*/
+  --body-font: "Syne", sans-serif;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: .938rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+button {
+  font-family: var(--body-font);  
+  font-size: var(--normal-font-size); /*taille de police*/
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  position: relative; 
+  color:b;
+}
+
+body::before {
+    content: "";
+    background-image: url("/projetsakuga/image/DALL·E\ 2024-05-19\ 20.18.21\ -\ A\ clean\,\ minimalist\ background\ for\ a\ website\,\ featuring\ a\ serene\,\ abstract\ landscape\ with\ soft\ pastel\ colors.\ The\ background\ should\ have\ a\ calming\ fee.webp");
+    background-size: cover;
+    background-position: center;
+    position: fixed; /* Position fixe pour que l'image reste fixe pendant le défilement */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.support {
+  background: rgba(251, 251, 251, 0.5);
+      backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px); /* For safari */  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+.support ul {
+  color: #000501;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 20px;
+  flex: 1;
+}
+
+.support li {
+  margin-bottom: 10px;
+}
+
+.support-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.support a {
+  color: #000501;
+  text-decoration: none;
+}
+
+.support-titre {
+  font-size: 20px;
+  margin-bottom: 20px;  /* Utilisez une marge inférieure raisonnable */
+  font-weight: bold;  /* Rendez le texte en gras pour qu'il ressemble à un titre */
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 6 colonnes équitablement réparties */
+  grid-template-rows: repeat(2, auto); /* 2 lignes avec une hauteur automatique */
+
+  gap: 20px;
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.card1 {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card1 video,
+.card1 img {
+  width: 100%; /* Assurez-vous que les vidéos et les images occupent toute la largeur de leur conteneur */
+  height: 200px; /* Définissez une hauteur fixe pour tous les éléments de la grille */
+  object-fit: cover; /* Pour assurer que les vidéos et les images s'adaptent correctement */
+}
+
+.card-info {
+  padding: 15px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.card-info p {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+#pagination-buttons {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+#prev-page,
+#next-page {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #B0E0E6;
+  box-shadow: 0 2px 16px hsla(230, 75%, 32%, .15);
+  color:#000501;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#prev-page:hover,
+#next-page:hover {
+  background-color: hsl(230, 18%, 68%);
+}

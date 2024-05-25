@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="/projetsakuga/front/header.css">
+   <link rel="stylesheet" href="/projetsakuga/front/terms/terms.css">
+   <title>Sakugaaa</title>
+</head>
+<body>
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <nav class="nav container">
+        <a href="/projetsakuga/front/index/index.html" class="nav__logo">Sakugaaa</a>
+        <div class="nav__center">
+          <ul class="nav__list">
+            <li class="nav__item dropdown">
+              <a href="/projetsakuga/front/layout/layout.html" class="nav__link">Animation</a>
+              <ul class="sous-menu">
+                <li><a href="#">Background</a></li>
+                <li><a href="#">CGI</a></li>
+                <li><a href="#">Key Animation</a></li>
+                <li><a href="#">Storyboard</a></li>
+              </ul>
+            </li>
+            <li class="nav__item dropdown">
+              <a href="#" class="nav__link">Artist</a>
+              <ul class="sous-menu">
+                <li><a href="#">Animators</a></li>
+                <li><a href="#">Directors</a></li>
+                <li><a href="#">Illustrators</a></li>
+                <li><a href="#">Composers</a></li>
+              </ul>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Tutorials & Articles</a>
+            </li>
+            <li class="nav__item dropdown">
+              <a href="#" class="nav__link">Rank</a>
+              <ul class="sous-menu">
+                <li><a href="#">Top Animations</a></li>
+                <li><a href="#">Top Studios</a></li>
+                <li><a href="#">Top Artists</a></li>
+              </ul>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Post</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Community</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav__actions">
+          <!-- Search button -->
+          <i class="ri-search-line nav__search" id="search-btn"></i>
+          <!-- Login button -->
+          <i class="ri-user-line nav__login" id="login-btn"></i>
+          <!-- Toggle button -->
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+      </nav>
+   </header>
+   <!--==================== SEARCH ====================-->
+   <div class="search" id="search">
+      <form action="" class="search__form">
+         <i class="ri-search-line search__icon"></i>
+         <input type="search" placeholder="What are you looking for?" class="search__input">
+      </form>
+      <i class="ri-close-line search__close" id="search-close"></i>
+   </div>
+  <!--==================== LOGIN ====================-->
+<!--==================== LOGIN ====================-->
+<div class="login" id="login">
+   <form action="" class="login__form">
+      <h2 class="login__title">Log In</h2>
+      <div class="login__group">
+         <div>
+            <label for="email" class="login__label">Email</label>
+            <input type="email" placeholder="Write your email" id="email" name="email" class="login__input" autocomplete="email">
+         </div>
+         
+         <div>
+            <label for="password" class="login__label">Password</label>
+            <input type="password" placeholder="Enter your password" id="password" name="password" class="login__input" autocomplete="current-password">
+         </div>
+      </div>
+
+      <div>
+         <p class="login__signup">
+            You do not have an account? <a href="#">Sign up</a>
+         </p>
+
+         <a href="#" class="login__forgot">
+            You forgot your password
+         </a>
+
+         <button type="submit" class="login__button">Log In</button>
+      </div>
+   </form>
+
+   <i class="ri-close-line login__close" id="login-close"></i>
+</div>
+
+
+
+   <!--==================== MAIN ====================-->
+   <main class="main">
+    <div class="terms">
+        <div class="intro">
+            <h2>Terms of Service for Sakugaaa</h2>
+            <p>Welcome to Sakugaaa! <br> By using this website, you agree to comply with the following terms and conditions outlined below. Please read these terms carefully before using the site. If you do not agree with these terms, please do not use Sakugaaa.</p>
+            <h3>1. Use of the Site</h3>
+            <ul class="service-ul">
+                <li class="service-li">1.1. You are permitted to access and use Sakugaaa for personal, non-commercial purposes. You may not use this site for any illegal or prohibited purpose.</li>
+                <li class="service-li">1.2. You are fully responsible for any activity conducted under your Sakugaaa account, including the confidentiality of your login information and password.</li>
+                
+            </ul>
+            <h3>2.Content</h3>
+            <ul class="service-ul">
+                <li class="service-li">2.1. Sakugaaa hosts content provided by its users. We do not guarantee the accuracy, completeness, or quality of this content, and we disclaim any liability for any inaccurate, offensive, or illegal content posted by users.</li>
+                <li class="service-li">2.2. By posting content on Sakugaaa, you grant Sakugaaa a worldwide, non-exclusive, royalty-free, perpetual, and irrevocable license to use, reproduce, modify, adapt, publish, translate, distribute, and display such content.</li>
+            </ul>
+            <h3>3. Intellectual Property</h3>
+            <ul class="service-ul">
+                <li class="service-li">3.1. All content on Sakugaaa, including but not limited to text, images, videos, logos, and trademarks, is the exclusive property of Sakugaaa or its licensors and is protected by intellectual property laws.</li>
+                <li class="service-li">3.2. You agree to respect the intellectual property rights of Sakugaaa and its licensors. You may not use, reproduce, or distribute any content from Sakugaaa without prior authorization.</li>
+            </ul>
+            <h3>4.Limitation of Liability</h3>
+            <ul class="service-ul">
+                <li class="service-li">4.1. Sakugaaa will not be liable for any direct, indirect, incidental, special, or consequential damages arising out of the use or inability to use this site, even if we have been advised of the possibility of such damages.</li>
+            </ul>
+            <h3>5. Changes to the Terms of Service</h3>
+            <ul class="service-ul">
+            <li class="service-li">5.1. Sakugaaa reserves the right to modify these terms of service at any time. Modifications will take effect immediately upon posting on the site. By continuing to use Sakugaaa after the posting of modifications, you agree to be bound by the modified terms of service.</li>
+            </ul>
+        </div>
+     </div>
+     <div class="support">
+        <ul>
+           <li>
+              <a href="#" class="support-titre">Support & Community</a>
+           </li>
+           <li>
+              <a href="#">FAQs</a>
+           </li>
+           <li>
+              <a href="#">Help Center</a>
+           </li>
+           <li>
+              <a href="#">Credits</a>
+           </li>
+        </ul>
+  
+        <ul>
+           <li>
+              <a href="#" class="support-titre">Features</a>
+           </li>
+           <li>
+              <a href="#">New Features</a>
+           </li>
+           <li>
+              <a href="#">Content Curation</a>
+           </li>
+           <li>
+              <a href="#">User Feedback</a>
+           </li>
+        </ul>
+  
+        <ul>
+           <li>
+              <a href="#" class="support-titre">Company</a>
+           </li>
+           <li>
+              <a href="#">About Us</a>
+           </li>
+           <li>
+              <a href="#">Contact Us</a>
+           </li>
+           <li>
+              <a href="#">Privacy Policy</a>
+           </li>
+           <li>
+              <a href="terms.html">Terms of Service</a>
+           </li>
+        </ul>
+     </div>
+</footer>
+</main>
+
+
+ 
+
+<script src="/projetsakuga/front/index/main.js"></script>
+</body>
+</html>

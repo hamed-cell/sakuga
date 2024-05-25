@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="video_detail.css">
+    <title>Video Details - Sakugaaa</title>
+</head>
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Sakugaaa</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="layout.html" class="nav__link">Key Animation</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">CGI</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Storyboard</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Artist</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">BG</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="community.html" class="nav__link">Community</a>
+                    </li>
+                </ul>
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+            <div class="nav__actions">
+                <i class="ri-search-line nav__search" id="search-btn"></i>
+                <i class="ri-user-line nav__login" id="login-btn"></i>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== SEARCH ====================-->
+    <div class="search" id="search">
+        <form action="" class="search__form">
+            <i class="ri-search-line search__icon"></i>
+            <input type="search" placeholder="What are you looking for?" class="search__input">
+            <i class="ri-close-line search__close" id="search-close"></i>
+        </form>
+    </div>
+
+    <!--==================== VIDEO DETAILS ====================-->
+    <main class="main">
+        <section class="video-details-section">
+            <div class="video-details-container">
+                <div id="video-player" class="video-player">
+                    <!-- Video player will be displayed here -->
+                </div>
+                <div id="video-info" class="video-info">
+                    <!-- Video information will be displayed here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== LOGIN ====================-->
+    <div class="login" id="login">
+        <form action="" class="login__form">
+            <h2 class="login__title">Log In</h2>
+            <div class="login__group">
+                <div>
+                    <label for="email" class="login__label">Email</label>
+                    <input type="email" placeholder="Write your email" id="email" class="login__input">
+                </div>
+                
+                <div>
+                    <label for="password" class="login__label">Password</label>
+                    <input type="password" placeholder="Enter your password" id="password" class="login__input">
+                </div>
+            </div>
+            <div>
+                <p class="login__signup">
+                    You do not have an account? <a href="#">Sign up</a>
+                </p>
+                <a href="#" class="login__forgot">You forgot your password</a>
+                <button type="submit" class="login__button">Log In</button>
+            </div>
+        </form>
+        <i class="ri-close-line login__close" id="login-close"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Récupérer les paramètres de l'URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const videoId = urlParams.get('video');
+
+            // Envoyer une requête au serveur pour obtenir les informations détaillées sur la vidéo
+            fetch(`/get_video_details?id=${videoId}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Afficher les informations de la vidéo
+                    const videoInfoContainer = document.getElementById('video-info');
+                    videoInfoContainer.innerHTML = `
+                        <h2>${data.title}</h2>
+                        <p><strong>Artiste:</strong> ${data.artist}</p>
+                        <p><strong>Anime:</strong> ${data.anime}</p>
+                        <p><strong>Description:</strong> ${data.description}</p>
+                    `;
+
+                    const videoPlayerContainer = document.getElementById('video-player');
+                    videoPlayerContainer.innerHTML = `
+                        <video src="${data.video_url}" controls class="video-detail"></video>
+                    `;
+                })
+                .catch(error => console.error('Error fetching video details:', error));
+        });
+    </script>
+    <script src="layout.js"></script>
+</body>
+</html>
