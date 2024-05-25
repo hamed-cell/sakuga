@@ -1,0 +1,11 @@
+{
+  "name": "sakuga",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cp -r front/index dist"
+  },
+  "author": "",
+  "license": "ISC"
+}

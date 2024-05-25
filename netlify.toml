@@ -1,5 +1,5 @@
 [build]
-  publish = "front/index"
+  publish = "dist"
   command = "npm run build"
 
 [[redirects]]
