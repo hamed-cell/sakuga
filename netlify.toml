@@ -1,0 +1,8 @@
+[build]
+  publish = "front/index" # Adaptez ceci au répertoire où se trouve votre index.html
+  command = "npm run build" # Adaptez à la commande de build de votre projet
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
